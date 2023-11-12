@@ -1,38 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Scope+One&display=swap');
+
+:root{
+  --fondo-principal: #5CB9FE;
+  --fondo-secundario: #fff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+p, span, label, button, div {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Scope One', serif;
+}
+
+body{
+  background-color: var(--fondo-principal);
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  margin: auto;
+  max-width: 350px;
+  display: block;
+  margin-top: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input{
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input:focus{
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+nav{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: var(--fondo-secundario);
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+nav img{
+  width: 20px;
+}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style-type: none;
+  align-items: center;
+  column-gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+nav a{
+  text-decoration: none;
+}
+nav li a, nav i{
+ color: #F0463C;
+ font-size: 1.2rem;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav input{
+  width: 300px;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #F0463C;
+  padding: 12px 16px;
+  display: block;
+  font-size: .8rem;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.pokedex{
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 3em;
+  column-gap: 2em;
+}
+
+
+
+.pokemon{
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 10px;
+  background-color: var(--fondo-secundario);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+}
+
+  .pokemon .numero{
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+  }
+
+  .pokemon .nombre{
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+  }
+
+  .pokemon .tipo, .pokemon .numero{
+      color: rgba(0,0,0,0.4);
+  }
+
+
+.btnEstrella {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.on {
+  color: red;
+}
+.off {
+  color: #ccc;
+}
+
+
+.color{
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  background: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+footer{
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  color: var(--fondo-secundario);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+  @media (min-width: 568px) {
+    .pokemon {
+        width: calc((100% / 2) - 2em + (2em / 2));
+    }
+}
+          
+@media (min-width: 992px) {
+    .pokemon {
+        width: calc((100% / 4) - 2em + (2em / 4));
+    }
+}
+
